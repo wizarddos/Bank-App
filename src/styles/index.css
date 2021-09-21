@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1D3354;
+    color: #FFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'sans-serif';
+}

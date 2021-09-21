@@ -1,0 +1,27 @@
+[
+    {
+        "login": "Zaloguj Się",
+        "id": "Twój identyfikator",
+        "pass": "Twoje Hasło",
+        "showPass": "Pokaż Hasło",
+        "register": "Nie masz Konta? ",
+        "registerLink":"Otwórz je zupełnie za darmo"
+    },
+    {
+        "register": "Zarejestruj Się",
+        "email": "Twój E-mail",
+        "pass": "Twoje Hasło",
+        "passRepeat":"Powtórz Hasło",
+        "showPass":"Pokaż Hasła",
+        "login": "Masz Już konto?",
+        "loginLink": "zaloguj się",
+        "tos": "Akceptuję regulamin",
+
+        "invalidMail": "Niepoprawny adres e-mail",
+        "tooShort":"Zbyt Krótkie hasło",
+        "dontMatch": "Hasła nie zgadzają się",
+        "agreeTos": "Zaakceptuj regulamin",
+        "emailTaken": "Ten e-mail jest zajęty",
+        "servErr": "Błąd Serwera! zarejestruj się w innym terminie"
+    }
+]

@@ -1,0 +1,46 @@
+.Form{
+    padding: 1%;
+    margin: 2%;
+    width: 40%;
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+
+    background-color: #44CF6C;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+label{
+    float: left;
+}
+
+.form-control:invalid{
+  border-color: #EC0B43;
+  border-width: 2px;
+}
+
+.form-control:valid{
+  border-color: #00ff48;
+  border-width: 2px;
+}
+
+@media (max-width: 1199px){
+    .loginForm{
+        width: 80%;
+        margin: 5%;
+        padding: 5%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+    
