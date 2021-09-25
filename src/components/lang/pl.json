@@ -1,11 +1,13 @@
 [
     {
         "login": "Zaloguj Się",
-        "id": "Twój identyfikator",
+        "email": "Twój e-mail",
         "pass": "Twoje Hasło",
         "showPass": "Pokaż Hasło",
         "register": "Nie masz Konta? ",
-        "registerLink":"Otwórz je zupełnie za darmo"
+        "registerLink":"Otwórz je zupełnie za darmo",
+
+        "invalidData": "Niepoprawny adres e-mail lub hasło"
     },
     {
         "register": "Zarejestruj Się",

@@ -2,13 +2,14 @@ import react, {useEffect, useState} from "react";
 import langJSON from "./lang/pl.json"
 import bootstrap from 'bootstrap'
 import '../styles/forms.css';
-import { Redirect } from "react-router";
+import { Redirect, useHistory } from "react-router";
 
 export default function RegisterForm(){
     const[lang, setLangData] = useState(JSON.parse(JSON.stringify(langJSON)))
     const [showPassVal, showPassUpdate] = useState(false);
 
     const [answer, setAnswer] = useState([]);
+    const history = useHistory();
 
     const [emailErr, setEmailErr] = useState("");
     const [passErr, setPassErr ]= useState("");
@@ -53,7 +54,7 @@ export default function RegisterForm(){
             if(answerObj.serverErr === 1){ setServErr(lang[1].servErr) }
             
         }else{
-            return <Redirect to = "dashboard" />
+            return history.push("/welcome")
         }
 
     })

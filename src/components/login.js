@@ -1,20 +1,24 @@
-import react, { useState } from 'react';
+import react, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import langJSON from "./lang/pl.json"
 import bootstrap from 'bootstrap'
+import "bootstrap"
 import '../styles/forms.css';
+import { Redirect, useHistory } from 'react-router';
 
 
 
 
 export default function LoginForm(){
     const[lang, setLangData] = useState(JSON.parse(JSON.stringify(langJSON)))
-    const [id, setID] = useState("");
-    const [idError, setIDError] = useState("");
+    
+    const [answer, setAnswer] = useState([])
 
-    const [pass, setPass] = useState("");
-    const [passError, setPassError] = useState("");
+    const [error, setError] = useState("");
 
     const [showPassVal, showPassUpdate] = useState(false);
+
+    const history = useHistory();
 
 
     const showPass = () => {
@@ -23,6 +27,46 @@ export default function LoginForm(){
     
     const submitForm = e =>{
         e.preventDefault();
+        let email = document.querySelector("#email").value;
+        let pass = document.querySelector("#password").value;
+
+        const jsonData = {
+            "userEmail": email,
+            "password": pass
+        }
+
+        const requestOptions = {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        }
+
+        fetch(`http://localhost/bank-app/api/login.php`, requestOptions)
+            .then(request => request.json())
+            .then(setAnswer)
+            .then(console.log)
+            .then(redirectToPage)
+            
+    }
+
+    useEffect(()=>{
+        setAnswer([]);
+    }, [])
+
+    const redirectToPage = ()=>{
+        
+        const answerObj = JSON.parse(JSON.stringify(answer))
+        if(answerObj.isOk === 1 && answerObj !== []){
+            if(answerObj.emailErr === 1){setError(lang[0].invalidData)}
+            if(answerObj.passErr === 1){setError(lang[0].invalidData)}
+        }else{
+            
+            if(answerObj.isAdmin === 0){
+                return history.push("/dashboard")
+            }else if( answerObj.isAdmin === 1){
+                return history.push("/admin")
+            }
+        }
     }
 
     return(
@@ -30,12 +74,12 @@ export default function LoginForm(){
             <h1>{lang[0].login}</h1>
             <br/>
             <form onSubmit = {submitForm} className ="needs-validation" id = "needs-validation"  novalidate>
-                <label htmlFor = "personalID">{lang[0].id}</label>
-                <input type = "number" placeholder = {lang[0].id} className = "form-control" id = "personalID" required/>
-                <div className = "feedback-valid"></div>
+                <label htmlFor = "email">{lang[0].email}</label>
+                <input type = "email" placeholder = {lang[0].email} className = "form-control" id = "email" required/>
 
                 <label htmlFor = "password">{lang[0].pass}</label>
                 <input type = {showPassVal ? "text" : "password"} id = "password" placeholder = {lang[0].pass} className = "form-control"  required/>
+                <div className = "err">{error}</div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" onChange = {showPass} id="invalidCheck"/>
