@@ -41,20 +41,25 @@ export default function RegisterForm(){
 
 
     useEffect(()=>{
-        const answerObj = JSON.parse(JSON.stringify(answer));
-        if(answerObj.isok === 1){
-            if(answerObj.emailErr === 1){ setEmailErr(lang[1].invalidMail )}
-            if(answerObj.emailErr === 2){ setEmailErr(lang[1].emailTaken) }
+        const answerObj = JSON.parse("["+JSON.stringify(answer)+"]");
+        console.log(answer)
+        if(answer.isok === 1){
+            if(answer.emailErr === 1){ setEmailErr(lang[1].invalidMail )}
+            if(answer.emailErr === 2){ setEmailErr(lang[1].emailTaken) }
 
-            if(answerObj.passErr === 1){ setPassErr(lang[1].tooShort) }
-            if(answerObj.passErr === 2){ setPassErr(lang[1].dontMatch) }
+            if(answer.passErr === 1){ setPassErr(lang[1].tooShort) }
+            if(answer.passErr === 2){ setPassErr(lang[1].dontMatch) }
 
-            if(answerObj.tosErr === 1){ setTosErr(lang[1].agreeTos) }
+            if(answer.tosErr === 1){ setTosErr(lang[1].agreeTos) }
             
-            if(answerObj.serverErr === 1){ setServErr(lang[1].servErr) }
+            if(answer.serverErr === 1){ setServErr(lang[1].servErr) }
             
         }else{
-            return history.push("/welcome")
+            if(answer.isok === 0){
+                return history.push("/welcome")
+            }else{
+                console.log('err')
+            }
         }
 
     })

@@ -1,6 +1,7 @@
-import react, { useEffect, useState } from 'react';
+import react, { useContext, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import langJSON from "./lang/pl.json"
+import { AppContext } from "../index";
 import bootstrap from 'bootstrap'
 import "bootstrap"
 import '../styles/forms.css';
@@ -10,6 +11,7 @@ import { Redirect, useHistory } from 'react-router';
 
 
 export default function LoginForm(){
+    const  context  = useContext(AppContext)
     const[lang, setLangData] = useState(JSON.parse(JSON.stringify(langJSON)))
     
     const [answer, setAnswer] = useState([])
@@ -60,7 +62,7 @@ export default function LoginForm(){
             if(answerObj.emailErr === 1){setError(lang[0].invalidData)}
             if(answerObj.passErr === 1){setError(lang[0].invalidData)}
         }else{
-            
+            context.loged = true;
             if(answerObj.isAdmin === 0){
                 return history.push("/dashboard")
             }else if( answerObj.isAdmin === 1){

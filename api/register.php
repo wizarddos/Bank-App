@@ -54,10 +54,10 @@ if(isset($_GET['jsonReq'])){
             $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users VALUES(:id, :pass, :email, :isAdmin )";
             $stmt = $db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-            echo $stmt->bindParam(":id", $null, PDO::PARAM_INT);
-            echo $stmt->bindParam(":pass", $pass_hashed, PDO::PARAM_STR);
-            echo $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-            echo $stmt->bindParam(":isAdmin", $false, PDO::PARAM_BOOL);
+            $stmt->bindParam(":id", $null, PDO::PARAM_INT);
+            $stmt->bindParam(":pass", $pass_hashed, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->bindParam(":isAdmin", $false, PDO::PARAM_BOOL);
             
             $stmt->execute();
             echo json_encode($errors);

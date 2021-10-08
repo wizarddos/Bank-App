@@ -25,5 +25,9 @@
         "agreeTos": "Zaakceptuj regulamin",
         "emailTaken": "Ten e-mail jest zajęty",
         "servErr": "Błąd Serwera! zarejestruj się w innym terminie"
+    },
+    {
+        "youHaveToLogIn": "Za chwilę będzie trzeba się zalogować",
+        "redirectToLogin": "Przenieś do strony logowania"
     }
 ]
