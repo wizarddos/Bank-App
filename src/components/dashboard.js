@@ -12,9 +12,7 @@ export default function Dashboard(){
     const[lang, setLangData] = useState(JSON.parse(JSON.stringify(langJSON)));
 
     const [userData, setUserData] = useState([]);
-    const [stockData, setStockData] = useState([]);
     const [mostValuableStock, setMostValuableStock] = useState([]);
-    const [newses, setNewses] = useState([]);
 
     useEffect(()=>{
         if(localStorage.getItem("loged") === false){
@@ -23,8 +21,10 @@ export default function Dashboard(){
             fetch(`http://localhost/bank-app/api/getUserData.php?id=${localStorage.getItem('id')}`)
             .then(response => response.json())
             .then(setUserData)
-            .then(console.log)
             
+            fetch(`http://localhost/bank-app/api/getStock.php`)
+            .then(response => response.json())
+            .then(setMostValuableStock)
 
         }
     },[])
@@ -47,11 +47,23 @@ export default function Dashboard(){
         }
     }
 
-    const getMostValueableStock = ()=>{ 
+    const getMostValueableUserStock = ()=>{ 
         if(userData.stocksLength > 0){
-            /*W tym miejscu należy dopisac logikę pobierającą z obiektu 
-            userData wszystko na temat akcji i wybierający tę największą */
-            console.log(userData);
+            let biggest = 0;
+            let biggestObj = {};
+            userData.stocks.forEach(el => {
+                if(parseFloat(el.price) > biggest){
+                    biggest = parseFloat(el.price);
+                    biggestObj = el;
+                }
+            });
+            return(
+                <>
+                    <h2>{lang[3].mostValuable}: <span className = "flashed">{biggestObj.brand}</span></h2>
+                    <p>{lang[3].id}: {biggestObj.typeId+"-"+biggestObj.id}</p>
+                    <p>{lang[3].val}: {biggestObj.price+lang[3].curr}</p>
+                </>
+            )
         }else{
             return(
                 <>
@@ -62,22 +74,37 @@ export default function Dashboard(){
         }
     }
 
-    
+    const getMostValueableStockInDB = ()=>{
+        
+        
+
+        if(mostValuableStock == null){
+            return <h2>{lang[3].smtWentWrong}</h2>
+        }else{
+            return (
+                <>
+                    <h3>{lang[3].nowMost}<br/>{lang[3].valStock}: <span className = "flashed">{mostValuableStock.stocks['brand']}</span></h3>
+                </>
+            )
+        }
+    }
     return(
         <>
             <Header />
             <div className = "dashboard container">
-                <div className = "dashboard-row row">
-                    <div className = "balance col">
+                <div className = "dashboard-row">
+                    <div className = "balance col ">
                         {generateBalance()}
                     </div>
-                    <div className = "mostValuablestock col">
-                        {getMostValueableStock()}
+                    <div className = "mostValuableUserstock col-6">
+                        {getMostValueableUserStock()}
                     </div>
                 </div>
-                <div className = "dashboard-row row">
-                    <div className = "stockGoingUp col"></div>
-                    <div className = "stockGoingDown col "></div>
+                <div className = "dashboard-row">
+                    <div className = "mostValuableStockInDB col-6">
+                        {getMostValueableStockInDB()}
+                    </div>
+                    <div className = "stockGoingDown col-6 "></div>
                 </div>
             </div>
         </>

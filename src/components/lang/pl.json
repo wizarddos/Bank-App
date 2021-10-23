@@ -36,6 +36,13 @@
         "noAcc": "Nie masz jeszcze konta",
         "open": "Otwórz konto",
         "noStocks": "Nie masz żadnych akcji",
-        "buySomeStocks": "kup akcje"
+        "buySomeStocks": "kup akcje",
+        "mostValuable": "Twoja najdroższa akcja",
+        "id": "identyfikator akcji",
+        "val": "Wartość",
+        "curr": "zł",
+        "smthWentWrong": "Coś chyba poszło tu nie tak",
+        "nowMost": "Aktualnie Najwięcej",
+        "valStock": " warta akcja"
     }
 ]

@@ -2,14 +2,21 @@
     width: 100%;
 }
 
-.balance{
-    height: 25%;
-}
 
 .dashboard-link{
     text-decoration: none;
 }
 
 .dashboard-row{
-    margin: 0;
+    height: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 2%;
+    margin: 5%;
 }
+
+.flashed{
+    color: #01BAEF;
+}
+
