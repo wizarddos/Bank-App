@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     $data = json_decode(file_get_contents('php://input'), true);
-    $errors = array("isOk" => 0,"emailErr"=>0, "passErr"=>0, "servErr"=>0, "isAdmin"=>0);
+    $errors = ["isOk" => 0,"emailErr"=>0, "passErr"=>0, "servErr"=>0, "isAdmin"=>0, "id"=>0];
     $email = $data['userEmail'];
     $pass = $data['password'];
     try{
@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         if($query1->rowCount() > 0){
             if(password_verify($pass, $result['pass'])){
                 $_SESSION['id'] = $result["id"];
+                $errors['id'] = $result['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION["isAdmin"] =  $result["isAdmin"];
                 if($_SESSION["isAdmin"]){$errors['isAdmin'] = 1;}

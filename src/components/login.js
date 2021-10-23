@@ -62,7 +62,8 @@ export default function LoginForm(){
             if(answerObj.emailErr === 1){setError(lang[0].invalidData)}
             if(answerObj.passErr === 1){setError(lang[0].invalidData)}
         }else{
-            context.loged = true;
+            localStorage.setItem("loged", true) 
+            localStorage.setItem("id", answerObj.id)
             if(answerObj.isAdmin === 0){
                 return history.push("/dashboard")
             }else if( answerObj.isAdmin === 1){

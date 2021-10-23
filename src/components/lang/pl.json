@@ -29,5 +29,13 @@
     {
         "youHaveToLogIn": "Za chwilę będzie trzeba się zalogować",
         "redirectToLogin": "Przenieś do strony logowania"
+    },
+    {
+        "welcomeBack": "Witaj spowrotem",
+        "balance": "Twoje Saldo",
+        "noAcc": "Nie masz jeszcze konta",
+        "open": "Otwórz konto",
+        "noStocks": "Nie masz żadnych akcji",
+        "buySomeStocks": "kup akcje"
     }
 ]

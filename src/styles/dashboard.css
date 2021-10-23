@@ -1,0 +1,15 @@
+.dashboard{
+    width: 100%;
+}
+
+.balance{
+    height: 25%;
+}
+
+.dashboard-link{
+    text-decoration: none;
+}
+
+.dashboard-row{
+    margin: 0;
+}
