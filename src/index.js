@@ -4,11 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import './styles/index.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+export let loged = false
 export const AppContext = createContext({});
 
 ReactDOM.render(
-  <AppContext.Provider value = {{loged: false}}>
+  <AppContext.Provider value = {{loged: false }}>
     <BrowserRouter>
       <App />
     </BrowserRouter>

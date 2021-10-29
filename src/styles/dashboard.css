@@ -1,0 +1,22 @@
+.dashboard{
+    width: 100%;
+}
+
+
+.dashboard-link{
+    text-decoration: none;
+}
+
+.dashboard-row{
+    height: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 2%;
+    margin: 5%;
+}
+
+.flashed{
+    color: #01BAEF;
+}
+
