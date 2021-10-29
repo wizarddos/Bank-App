@@ -43,6 +43,10 @@
         "curr": "zł",
         "smthWentWrong": "Coś chyba poszło tu nie tak",
         "nowMost": "Aktualnie Najwięcej",
-        "valStock": " warta akcja"
+        "valStock": " warta akcja",
+        "noDeposit": "Nie masz otwartej  żadnej lokaty",
+        "openDeposit": "Otwórz Lokatę",
+        "yourDeposit": "Twoje pieniądze na lokacie",
+        "transferFunds": "Przenieś środki na Lokatę"
     }
 ]

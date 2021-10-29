@@ -28,10 +28,6 @@ export default function Dashboard(){
                 fetch(`http://localhost/bank-app/api/getStock.php`)
                 .then(response => response.json())
                 .then(setMostValuableStock)
-
-                console.log('bez cahce')
-            }else{
-                console.log('zacahcheowano')
             }
             
         }
@@ -97,6 +93,26 @@ export default function Dashboard(){
             )
         }
     }
+
+    const generateDeposits = ()=>{
+        if(userData.depositVal === null){
+            
+            return( 
+                <>
+                    <h2>{lang[3].noDeposit}</h2>
+                    <a href = "openDeposit" className="link-success dashboard-link">{lang[3].openDeposit}</a>
+                </>
+            )
+        }else{
+            return(
+                <>
+                    <h2>{lang[3].yourDeposit}: {userData.depositVal}{userData.depositCurr}</h2>
+                    <a href = "fundDeposit" className="link-success dashboard-link">{lang[3].transferFunds}</a>
+                </>
+            )
+        }
+    }
+
     return(
         <>
             <Header />
@@ -113,7 +129,9 @@ export default function Dashboard(){
                     <div className = "mostValuableStockInDB col-6">
                         {getMostValueableStockInDB()}
                     </div>
-                    <div className = "otherCurrencyWallet col-6 "></div>
+                    <div className = "usersDeposit col-6 ">
+                        {generateDeposits()}
+                    </div>
                 </div>
             </div>
         </>
