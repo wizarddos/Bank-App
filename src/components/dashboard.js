@@ -6,6 +6,8 @@ import langJSON from "./lang/pl.json"
 import Header from "./template/header";
 import "../styles/dashboard.css"
 
+
+
 export default function Dashboard(){
     const context = useContext(AppContext);
     const history = useHistory();
@@ -18,16 +20,23 @@ export default function Dashboard(){
         if(localStorage.getItem("loged") === false){
             history.push("/")
         }else{
-            fetch(`http://localhost/bank-app/api/getUserData.php?id=${localStorage.getItem('id')}`)
-            .then(response => response.json())
-            .then(setUserData)
-            
-            fetch(`http://localhost/bank-app/api/getStock.php`)
-            .then(response => response.json())
-            .then(setMostValuableStock)
+            if( userData !== [] && mostValuableStock !== []){
+                fetch(`http://localhost/bank-app/api/getUserData.php?id=${localStorage.getItem('id')}`)
+                .then(response => response.json())
+                .then(setUserData);
+                
+                fetch(`http://localhost/bank-app/api/getStock.php`)
+                .then(response => response.json())
+                .then(setMostValuableStock)
 
+                console.log('bez cahce')
+            }else{
+                console.log('zacahcheowano')
+            }
+            
         }
     },[])
+    
 
     const generateBalance = ()=>{
         if(userData.balance !== null){
@@ -75,15 +84,15 @@ export default function Dashboard(){
     }
 
     const getMostValueableStockInDB = ()=>{
-        
-        
 
-        if(mostValuableStock == null){
-            return <h2>{lang[3].smtWentWrong}</h2>
+        
+        if(mostValuableStock === []){
+            return <h2>{lang[3].smthWentWrong}</h2>
         }else{
             return (
                 <>
-                    <h3>{lang[3].nowMost}<br/>{lang[3].valStock}: <span className = "flashed">{mostValuableStock.stocks['brand']}</span></h3>
+                
+                    <h3>{lang[3].nowMost}<br/>{lang[3].valStock}: <span className = "flashed">{mostValuableStock.brand}</span></h3>
                 </>
             )
         }
@@ -104,7 +113,7 @@ export default function Dashboard(){
                     <div className = "mostValuableStockInDB col-6">
                         {getMostValueableStockInDB()}
                     </div>
-                    <div className = "stockGoingDown col-6 "></div>
+                    <div className = "otherCurrencyWallet col-6 "></div>
                 </div>
             </div>
         </>
