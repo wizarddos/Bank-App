@@ -7,6 +7,7 @@ import { Route, Switch  } from "react-router-dom";
 import Dashboard from "./dashboard";
 import Welcome from "./welcome";
 import Header from "./template/header";
+import OpenAccount from "./openAccount";
 
 export default function Routes(){
     return(
@@ -26,6 +27,10 @@ export default function Routes(){
 
             <Route path = "/welcome">
                 <Welcome />
+            </Route>
+
+            <Route path = "/open">
+                <OpenAccount />
             </Route>
 
             <Route path = "*">

@@ -48,5 +48,8 @@
         "openDeposit": "Otwórz Lokatę",
         "yourDeposit": "Twoje pieniądze na lokacie",
         "transferFunds": "Przenieś środki na Lokatę"
+    },
+    {
+        "youHaveAcc": "Masz już konto więc nie możesz stworzyć innego."
     }
 ]
