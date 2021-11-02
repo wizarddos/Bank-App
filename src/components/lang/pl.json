@@ -50,6 +50,11 @@
         "transferFunds": "Przenieś środki na Lokatę"
     },
     {
-        "youHaveAcc": "Masz już konto więc nie możesz stworzyć innego."
+        "youHaveAcc": "Masz już konto więc nie możesz stworzyć innego.",
+        "Header": "Otwórz konto",
+        "chooseCurr": "Wpisz kod Waluty (np. PLN)",
+        "openAccount": "Złóż Wniosek",
+        "somethingWentWrong": "Coś poszło nie tak, spróbuj ponownie w innycm terminie",
+        "badCurrency": "Zły kod Waluty, Wybierz ten z listy"
     }
 ]
