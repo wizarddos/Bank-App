@@ -106,7 +106,7 @@ export default function Dashboard(){
         }else{
             return(
                 <>
-                    <h2>{lang[3].yourDeposit}: {userData.depositVal}{userData.depositCurr}</h2>
+                    <h2>{lang[3].yourDeposit}:<br/> {userData.depositVal} {userData.depositCurr}</h2>
                     <a href = "fundDeposit" className="link-success dashboard-link">{lang[3].transferFunds}</a>
                 </>
             )

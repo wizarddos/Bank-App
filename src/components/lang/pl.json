@@ -56,5 +56,11 @@
         "openAccount": "Złóż Wniosek",
         "somethingWentWrong": "Coś poszło nie tak, spróbuj ponownie w innycm terminie",
         "badCurrency": "Zły kod Waluty, Wybierz ten z listy"
+    },
+    {
+        "youHaveDep": "Masz już Lokatę więc nie możesz stworzyć innej.",
+        "Header": "Otwórz Lokatę",
+        "chooseValue": "Ile pieniędzy chcesz przelać na Lokatę",
+        "chooseValuePlaceholder": "Ile pieniędzy chcesz przelać."
     }
 ]

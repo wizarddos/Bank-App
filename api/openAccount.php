@@ -19,7 +19,7 @@ if(isset($_GET['id'])){
     }
 
     if($matches){
-        $sql = "INSERT INTO savings VALUES(':id', ':value', ':curr', ':belongs')";
+        $sql = "INSERT INTO `savings` VALUES(:id, :value, :curr, :belongs)";
         try{
             require_once 'includes/connect.php';
             $db = new PDO($db_dsn, $db_user, $db_pass);
@@ -32,9 +32,9 @@ if(isset($_GET['id'])){
             $stmt->execute();
             echo json_encode($response);
 
-            //TODO: Naprawić niewykonujące się zapytanie
 
         }catch(PDOException $e){
+            echo $e;
             $response['serverErr'] = 1;
             echo json_encode($response);
         }
