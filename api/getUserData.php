@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     $response = ['id'=>$id, 'email'=> '', 'balance'=>0, 'currency'=>"", 'error'=>0, 'stocksLength'=>0, 'stocks'=>[], 'depositId'=>0, 'depositVal'=> 0, 'depositCurr'=>""];
     $usersSQL = 'SELECT * FROM `users` WHERE id = ?';
-    $savingsSQL = 'SELECT * FROM `savings` WHERE belonsto = ?';
+    $savingsSQL = 'SELECT * FROM `savings` WHERE belongsto = ?';
     $stocksSQL = 'SELECT * FROM `stocks` WHERE belongs = ?';
     $depositSQL = 'SELECT * FROM `deposits` WHERE belongsto = ?';
 
@@ -32,12 +32,16 @@ if(isset($_GET['id'])){
         $userSQLStatment->execute();
         $savingsSQLStatment->execute();
         $stocksSQLStatment->execute();
-        $depositSQLStatment->execute();
+        if($depositSQLStatment->execute()){
+            //
+        }else{
+            $response['error'] = 1;
+        }
 
         $usersSQLresult = $userSQLStatment->fetch(PDO::FETCH_ASSOC);
         $savingsSQLresult = $savingsSQLStatment->fetch(PDO::FETCH_ASSOC);
         $stocksSQLresult = $stocksSQLStatment->fetchAll(PDO::FETCH_ASSOC);
-        $depositSQLresult = $depositSQLStatment->fetchAll(PDO::FETCH_ASSOC);
+        $depositSQLresult = $depositSQLStatment->fetch(PDO::FETCH_ASSOC);
 
         $response['email'] = $usersSQLresult['email'];
         $response['balance'] = $savingsSQLresult['value'] ?? null;
