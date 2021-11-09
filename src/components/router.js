@@ -9,6 +9,7 @@ import Welcome from "./welcome";
 import Header from "./template/header";
 import OpenAccount from "./openAccount";
 import OpenDeposit from "./openDeposit";
+import FundDeposit from "./fundDeposit";
 
 export default function Routes(){
     return(
@@ -36,6 +37,10 @@ export default function Routes(){
 
             <Route path = "/openDeposit">
                 <OpenDeposit />
+            </Route>
+
+            <Route path = "/fundDeposit">
+                <FundDeposit />
             </Route>
 
             <Route path = "*">

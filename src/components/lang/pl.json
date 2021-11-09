@@ -46,7 +46,7 @@
         "valStock": " warta akcja",
         "noDeposit": "Nie masz otwartej  żadnej lokaty",
         "openDeposit": "Otwórz Lokatę",
-        "yourDeposit": "Twoje pieniądze na lokacie",
+        "yourDeposit": "Twoje środki na lokacie",
         "transferFunds": "Przenieś środki na Lokatę"
     },
     {
@@ -62,5 +62,9 @@
         "Header": "Otwórz Lokatę",
         "chooseValue": "Ile pieniędzy chcesz przelać na Lokatę",
         "chooseValuePlaceholder": "Ile pieniędzy chcesz przelać."
+    },
+    {
+        "sendToDeposit": "Przelew na lokatę",
+        "youdontHaveDep": "Nie masz lokaty więc nie przelejesz pieniędzy"
     }
 ]
