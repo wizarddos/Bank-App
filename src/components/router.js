@@ -6,10 +6,10 @@ import RegisterForm from "./register";
 import { Route, Switch  } from "react-router-dom";
 import Dashboard from "./dashboard";
 import Welcome from "./welcome";
-import Header from "./template/header";
 import OpenAccount from "./openAccount";
 import OpenDeposit from "./openDeposit";
 import FundDeposit from "./fundDeposit";
+import Wallet from "./wallet";
 
 export default function Routes(){
     return(
@@ -41,6 +41,10 @@ export default function Routes(){
 
             <Route path = "/fundDeposit">
                 <FundDeposit />
+            </Route>
+
+            <Route path = "/wallet">
+                <Wallet/>
             </Route>
 
             <Route path = "*">

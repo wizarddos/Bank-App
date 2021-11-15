@@ -66,5 +66,10 @@
     {
         "sendToDeposit": "Przelew na lokatę",
         "youdontHaveDep": "Nie masz lokaty więc nie przelejesz pieniędzy"
+    },
+    {
+        "yourStocks": "Twoje Akcje",
+        "wallet": "Twój Portfel",
+        "stockPrice": "Cena"
     }
 ]
