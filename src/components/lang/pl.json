@@ -70,6 +70,33 @@
     {
         "yourStocks": "Twoje Akcje",
         "wallet": "Twój Portfel",
-        "stockPrice": "Cena"
+        "stockPrice": "Cena",
+        "sellStock": "Sprzedaj Akcję"
+    },
+    {
+        "mostValuableStock": "Najwięcej warta niekupiona akcja",
+        "price":"Cena: ",
+        "loading":"ładowanie...",
+        "buyStock": "Kup więcej tych akcji",
+        "lessValuableStock": "Najmniej warta akcja",
+        "search": "Szukaj Akcji",
+        "submit": "Szukaj"
+    },
+    {
+        "results": "Wyniki wyszukiwania",
+        "buyStock": "Kup Akcję",
+        "noResults": "Nie znaleziono żadnych nie zakupionych akcji"
+    },
+    {
+        "buyStock": "Kup Akcję",
+        "youAreBuying": "Kupujesz akcję: ",
+        "price":"Cena: ",
+        "addedSuccess": "Pomyślnie zakupiono Akcję",
+        "addedFail": "Coś poszło nie tak, spróbuj ponownie w innym terminie"
+    },
+    {
+        "youAreSelling": "Sprzedajesz Akcję ",
+        "sellStock":"Sprzedaj Akcję",
+        "selledSuccess": "Pomyślnie sprzedano akcję"
     }
 ]

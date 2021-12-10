@@ -10,6 +10,10 @@ import OpenAccount from "./openAccount";
 import OpenDeposit from "./openDeposit";
 import FundDeposit from "./fundDeposit";
 import Wallet from "./wallet";
+import StockMarket from "./market";
+import SearchMarket from "./search";
+import BuyStock from "./buyStock";
+import SellStock from "./sellStock";
 
 export default function Routes(){
     return(
@@ -45,6 +49,22 @@ export default function Routes(){
 
             <Route path = "/wallet">
                 <Wallet/>
+            </Route>
+
+            <Route path = "/market">
+                <StockMarket/>
+            </Route>
+
+            <Route path = "/search">
+                <SearchMarket />
+            </Route>
+
+            <Route path = "/buyStockPath">
+                <BuyStock />
+            </Route>
+
+            <Route path = "/sellStock">
+                <SellStock />
             </Route>
 
             <Route path = "*">

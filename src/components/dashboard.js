@@ -73,7 +73,7 @@ export default function Dashboard(){
             return(
                 <>
                     <h2>{lang[3].noStocks}</h2>
-                    <a href = "buy" className="link-success dashboard-link">{lang[3].buySomeStocks}</a>
+                    <a href = "/market" className="link-success dashboard-link">{lang[3].buySomeStocks}</a>
                 </>
             )
         }

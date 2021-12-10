@@ -15,16 +15,6 @@ export default function Wallet(){
     const lang = useLang();
 
 
-    const displayStocks = ()=>{
-        //console.log(userData.stocks.map(()=>{}))
-        if(userStocks){
-            
-        }else{
-            console.log("hello")
-        }
-        //
-    }
-
     return(
         <>
             <Header />
@@ -60,7 +50,9 @@ export function Stock({ id, typeId, brand, price}){
 
     return(
         <div className = "stock">
-            <p>{brand} ({typeId+"-"+id}) - {lang[7].stockPrice}: {price}{lang[3].curr}</p>
+            {brand} ({typeId+"-"+id}) - {lang[7].stockPrice}: {price}{lang[3].curr} &nbsp;&nbsp;
+            <a class = "link-danger" href = {`/sellStock?StockId=${id}`}>{lang[7].sellStock}</a>
+            <br/>
         </div>
     )
 }

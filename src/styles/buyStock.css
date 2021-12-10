@@ -1,0 +1,14 @@
+.buyStock{
+    text-align: center;
+    padding: 2%;
+}
+
+form{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.buyStockBtn{
+    padding: 2%;
+    width: 25%;
+}

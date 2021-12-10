@@ -1,0 +1,28 @@
+.stocks{
+    padding: 2%;
+    display: flex;
+}
+
+.markt-col{
+    padding: 4%;
+    width: 50%;
+}
+
+.loading{
+    padding: 2%;
+    text-align: center;
+}
+
+.market-col-div{
+    margin-top: 5%;
+}
+
+.markt-col-2{
+    text-align: center ;
+}
+
+
+.err{
+    color: #EC0B43;
+    font-size: larger;
+}
